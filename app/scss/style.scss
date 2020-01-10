@@ -2,7 +2,7 @@
 @import "globale";
 @import "vars";
 @import "animation";
-// @import "media";
+
 .header {
   position: fixed;
   top: 0;
@@ -15,7 +15,7 @@
     border-bottom: 1px solid #fff;
     transition: 0.5s;
     .header__inner {
-      transition: .5s all;
+      transition: 0.5s all;
       min-height: 70px;
     }
   }
@@ -25,7 +25,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: .5s all;
+  transition: 0.5s all;
 }
 .wrapper-bg {
   background-image: url(../images/main-bg.jpg);
@@ -121,6 +121,7 @@
   border: none;
   background-color: transparent;
   cursor: pointer;
+  z-index: 1;
 }
 .arrows-left {
   background-image: url(../images/arrow-left.png);
@@ -197,6 +198,7 @@
     color: #fff568;
     text-transform: uppercase;
     transition: 0.3s all;
+    
     &:hover {
       border: 2px solid #fff568;
     }
@@ -292,27 +294,26 @@
   height: 6px;
   background-color: rgba(#fff, 0.3);
   position: relative;
-  &-result {
-    background-color: #ffb023;
-    position: absolute;
-    height: 6px;
-    // width: 100%;
+}
+.skill__info-line-result {
+  background-color: #ffb023;
+  position: absolute;
+  height: 6px;
+  &.--on {
     animation-name: anim-line;
-
     animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    &::before {
-      content: "";
-      width: 7px;
-      height: 6px;
-      position: absolute;
-      top: -6px;
-      right: 0;
-      background-color: #ffb023;
-    }
+    animation-timing-function: linear;
+  }
+  &::before {
+    content: "";
+    width: 7px;
+    height: 6px;
+    position: absolute;
+    top: -6px;
+    right: 0;
+    background-color: #ffb023;
   }
 }
-
 .skill__content-info {
   & + & {
     margin-top: 30px;
@@ -563,6 +564,8 @@
     cursor: pointer;
     border: 1px solid transparent;
     transition: 0.3s all;
+    animation-delay: 1.6s;
+    animation-iteration-count: infinite;
     &:hover {
       border: 1px solid #fbc22c;
       background-color: #fff;
@@ -681,3 +684,56 @@
 .fancybox-can-swipe .fancybox-content {
   cursor: auto;
 }
+.menu-modal {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  padding: 0;
+  position: relative;
+}
+.menu-modal__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  text-align: center;
+  a {
+    color: #757575;
+    display: block;
+    padding: 20px;
+    transition: 0.3s all;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #fff;
+      bottom: 0;
+      left: 50%;
+      transition: 0.3s all;
+      transform: translateX(-50%);
+    }
+    &:hover {
+      color: #f1c40f;
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+.fancybox-button svg {
+  path {
+    transition: 0.3s all;
+  }
+  transition: 0.3s all;
+  &:hover {
+    transform: rotate(90deg);
+    path {
+      fill: #f1c40f;
+    }
+  }
+}
+@import "media";

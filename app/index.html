@@ -26,8 +26,20 @@
                     <a href="#" class="header__logo">
                         <img src="./images/logo.png" alt="">
                     </a>
-                    <nav class="header__menu animated fadeInRight"">
-                        <span class=" menu__bumerang"></span>
+                    <!-- animated fadeInRight -->
+                    <nav class="header__menu ">
+                        <a data-fancybox data-animation-duration="700" data-src="#animatedModal"
+                            class=" menu__bumerang"></a>
+                        <div style="display: none;" id="animatedModal" class="menu-modal">
+                            <ul class="menu-modal__list">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Our Services</a></li>
+                                <li><a href="#">Portrolio</a></li>
+                                <li><a href="#">Technologies</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Read Blog</a></li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -362,8 +374,7 @@
                                     class="contact__item-input item-input__number wow fadeInLeft" data-wow-delay="1.4s"
                                     required placeholder="Your Phont Number">
                                 <textarea placeholder="Your Message" required></textarea>
-                                <button class="wow pulse" data-wow-delay="1.6" data-wow-iteration="infinite"
-                                    data-fancybox data-animation-duration="700" data-src="#form-modal"
+                                <button class="animated pulse" data-fancybox data-src="#form-modal"
                                     type="submit">Alright Submit it</button>
                             </form>
                             <div id="form-modal" class="animated-modal">
@@ -394,7 +405,7 @@
             </div>
         </div>
     </section>
-    <footer class="footer">
+    <!--  <footer class="footer">
         <div class="footer__wrapper">
             <div class="footer-top">
                 <div class="footer-top__inner">
@@ -420,7 +431,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="./js/libs.min.js"></script>
     <script src="./js/main.js"></script>
